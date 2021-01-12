@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<LINK REL=StyleSheet HREF="estilo.css" TYPE="text/css" />
+<img src="negro.jpeg" height="450" width="250" title="inicio"/>
+<head>
+<body bgcolor = "#FFFFFF"></body>
+<form action="#">
+       <fieldset id="billing">
+    
+     <FONT FACE="impact" SIZE=6 COLOR="black">
+      <legend >Ordenar por:  </legend>
+      </FONT>
+</head>
+     <input type="radio" name = "filtro" id="billing-radio">
+     <FONT FACE="impact" SIZE = 3 COLOR="black">
+           <label for="billing_is_shipping">Rango de precios </label>
+   </FONT>
+     <br>
+     <FONT FACE="impact" SIZE = 3 COLOR="black">
+     <input  type="text" placeholder=" M&iacute;nimo" disabled>
+     <input type="text" placeholder="M&aacute;ximo" disabled>
+     <br /><br />
+     <input type = "radio" id = 2 name = "filtro" value = "c2"/> Menor Precio
+			<br /><br />
+			<input type = "radio" id = 3 name = "filtro" value = "c3"/> Mayor Precio
+			<br /><br />
+			<input type = "radio" id = 4 name = "filtro" value = "c4"/> Con descuento de estudiante "itver"
+         <br /><br />
+         <input type="radio" name="option" id="date" value="date"/> Ubicaci&oacute;n
+        
+                  <br >
+               </FONT>
+
+               <div class="form-group col-md-4">
+                        <select name="ubicacion" class="form-control select" id="selectMonth1" disabled >
+                          <option disabled selected>Selecciona una direcci&oacute;n </option>
+					<option value="1" >P silva entre Miguel &aacute;ngel de Quevedo y calle del tigre</option>
+					<option value="2" > Calle del tigre entre J.P silva y Arizmendi</option> 
+					<option value="3">Paseo Playa Linda, Buenavista</option>
+              </select>
+              
+              <script type = "text/javascript">
+            /*Selector de clases para alcanzar todos los select*/
+                 var allSelects = document.querySelectorAll(".select");
+            /*Selector de tipo para alcanzar todos los radio*/
+                 var allRadios = document.querySelectorAll("input[type=radio]");
+
+            /*Asignamos dentro del bucle un click listener a cada radio*/
+                 allRadios.forEach(function(oneRadio) {
+               oneRadio.addEventListener('click', function(e) {
+           /*Verificamos el id para decidir si activar o no*/
+               isEnabled = !(e.target.id === 'date');
+           /*Cambiamos el estado de los select segun el estado de isEnabled*/
+              allSelects.forEach(function(oneSelect) {
+               oneSelect.disabled = isEnabled;
+            });
+              });
+                 });
+            </script>
+        </div>
+            <div>
+              <button type="button" class="boton_personalizado">Aplicar </button>
+              
+             </div>
+            
+       </fieldset>
+       
+   <style type="text/css">
+     input[type="text"]:disabled {
+  background: rgb(233, 229, 232);
+}
+    </style>
+    <style type="text/css">
+      img[title=inicio] { float:left; }
+    </style>
+    <script type = "text/javascript">
+      
+      // Esperar a que la página termine de cargarse
+document.addEventListener('DOMContentLoaded', function () {
+  // Adjunte el detector de eventos `change` al checkbox
+  document.getElementById('billing-radio').onchange = toggleBilling;
+}, false);
+
+function toggleBilling() {
+  // Seleccione los campos de texto de facturación
+  var billingItems = document.querySelectorAll('#billing input[type="text"]');
+
+  // Alternar los campos de texto de facturación
+  for (var i = 0; i < billingItems.length; i++) {
+    billingItems[i].disabled = !billingItems[i].disabled;
+  }
+}
+	</script>
+ </form>
+</body>
+   </html>
