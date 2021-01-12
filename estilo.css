@@ -1,0 +1,54 @@
+  body {
+    font  : 30.5px sans-serif;
+  
+    padding : 2em;
+    margin  : 4 auto;
+  
+    background : rgb(196, 190, 190);
+  }
+  
+  form {
+    position: relative;
+  
+    width  : 392px;
+    height : 539px;
+    margin : 0 auto;
+  
+    background: rgb(255, 253, 253);
+  }
+ 
+  input:focus, textarea:focus {
+    background   : rgba(0,0,0,.1);
+    border-radius: 9px;
+    outline      : none;
+  }
+  input {
+    height: 1.5em; /* for IE */
+    vertical-align: middle; /* This is optional but it makes legacy IEs look better */
+}
+textarea {
+    display : block;
+  
+    padding : 20px;
+    margin  : 10px 0 0 -10px;
+    width   : 340px;
+    height  : 360px;
+  
+    resize  : none;
+    overflow: auto;
+  }
+  button {
+    text-decoration: none;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: impact;
+    font-weight: 300;
+    font-size: 18px;
+    
+    color: #0a0a0a;
+    background-color: #cfc8c8;
+    border-radius: 15px;
+    border: 3px double #111111;
+    }
+ 
